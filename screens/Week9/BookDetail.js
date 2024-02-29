@@ -5,6 +5,7 @@ import { useNavigation, useRoute } from "@react-navigation/native";
 import BookStorage from "../../storages/BookStorage";
 import ImageViewer from "react-native-image-zoom-viewer";
 import File from "../../helpers/File";
+import BookService from "../../services/BookService";
 
 
 export default function BookDetail() {
@@ -28,10 +29,19 @@ export default function BookDetail() {
 
   const deleteBook = async () => {
     //REMOVE BOOK
-    await BookStorage.removeItem(item);
+    // await BookStorage.removeItem(item);
+    await BookService.destroyItem(item);
     //REDIRECT TO
     navigation.navigate("Book");
   };
+
+  const onLoad = async () => {
+    // let b = await BookStorage.readItemDetail(item);
+    let b = await BookService.getItemDetail(item);
+    setBook(b);
+  };
+
+  useEffect(() => { onLoad(); }, []);
 
   useEffect(async () => {
     let b = await BookStorage.readItemDetail(item);

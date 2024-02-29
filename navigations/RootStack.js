@@ -11,6 +11,12 @@ import TodoList from "../screens/Week9/TodoList";
 import Book from "../screens/Week9/Book";
 import Location from "../screens/week10/Location";
 import LocationQuiz from "../screens/week10/LocationQuiz";
+import Workout from "../screens/Project/Workout";
+import Complete from "../components/project/Complete";
+import Bottom from "./Bottom";
+
+
+
 
 const Stack = createStackNavigator();
 
@@ -28,6 +34,10 @@ export default function RootStack() {
       <Stack.Screen name="TodoList" component={TodoList} />
       <Stack.Screen name="Location" component={Location} />
       <Stack.Screen name="LocationQuiz" component={LocationQuiz} />
+      <Stack.Screen name="Workout" component={Workout} />
+      <Stack.Screen name="Complete" component={Complete} />
+      <Stack.Screen name="Bottom" component={Bottom}/>
+      
     </Stack.Navigator>
   );
 }

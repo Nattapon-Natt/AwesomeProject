@@ -13,6 +13,7 @@ import Ex10 from '../screens/Week2/Ex10';
 import Ex11 from '../screens/Week2/Ex11';
 import Ex12 from '../screens/Week2/Ex12';
 import Home from '../screens/week6/Home';
+import Complete from '../components/project/Complete';
 
 
 const Stack = createStackNavigator();
@@ -83,6 +84,11 @@ export default function HomeStack() {
             <Stack.Screen
                 name="Ex12"
                 component={Ex12}
+                options={{ title: "Exercise 12" }}
+            />
+            <Stack.Screen
+                name="Complete"
+                component={Complete}
                 options={{ title: "Exercise 12" }}
             />
 
